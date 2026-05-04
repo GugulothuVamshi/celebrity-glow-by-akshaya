@@ -32,6 +32,7 @@
     "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^20",
     "@types/react": "^19",
+    "@opennextjs/cloudflare",
     "@types/react-dom": "^19",
     "eslint": "9.39.1",
     "eslint-config-next": "16.0.8",

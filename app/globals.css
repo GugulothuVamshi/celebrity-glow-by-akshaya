@@ -1,0 +1,266 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-montserrat);
+  --color-navy: #0f2343;
+  --color-rosegold: #d6a838;
+  --color-gold: #d6a838;
+  --color-cream: #f8f4ea;
+}
+
+:root {
+  --navy: #0f2343;
+  --navy-soft: #15335f;
+  --gold: #d6a838;
+  --gold-bright: #f5dc8a;
+  --gold-deep: #b8891d;
+  --rosegold: #d6a838;
+  --cream: #f8f4ea;
+  --white: #ffffff;
+  --glow-gold: rgba(245, 220, 138, 0.45);
+}
+
+body {
+  color: var(--navy);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(245, 220, 138, 0.22), transparent 22%),
+    radial-gradient(circle at 88% 18%, rgba(21, 51, 95, 0.16), transparent 26%),
+    linear-gradient(180deg, #fffdf7 0%, var(--cream) 52%, #f3eddd 100%);
+}
+
+.rosegold-text {
+  color: transparent;
+  background: linear-gradient(105deg, var(--gold-deep) 0%, var(--gold-bright) 48%, var(--gold-deep) 100%);
+  background-size: 180% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 0 0 18px rgba(245, 220, 138, 0.2);
+  animation: shimmer 3.8s ease-in-out infinite;
+}
+
+.bg-rosegold {
+  background: linear-gradient(135deg, var(--gold-deep) 0%, var(--gold) 45%, var(--gold-bright) 100%);
+}
+
+.bg-gold {
+  background: linear-gradient(135deg, var(--gold-deep) 0%, var(--gold) 45%, var(--gold-bright) 100%);
+  box-shadow: 0 10px 24px rgba(184, 137, 29, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.border-rosegold {
+  border-color: var(--gold);
+}
+
+.border-gold {
+  border-color: var(--gold);
+}
+
+.hero-gradient {
+  background:
+    linear-gradient(112deg, rgba(15, 35, 67, 0.9), rgba(15, 35, 67, 0.62), rgba(12, 26, 51, 0.84)),
+    url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&q=80&w=2070');
+  background-size: cover;
+  background-position: center;
+}
+
+.service-card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(214, 168, 56, 0.28);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(252, 248, 238, 0.92));
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 36px rgba(15, 35, 67, 0.14), 0 0 0 1px rgba(214, 168, 56, 0.34);
+  border-color: var(--gold);
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold-bright));
+  transition: width 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--gold-deep);
+  text-shadow: 0 0 10px rgba(245, 220, 138, 0.34);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.btn-luxury {
+  border: 1px solid var(--gold);
+  padding: 0.75rem 2rem;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  color: var(--gold-deep);
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.96), rgba(251, 242, 212, 0.95));
+  box-shadow: 0 6px 18px rgba(15, 35, 67, 0.12);
+}
+
+.btn-luxury::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -140%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.48), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.btn-luxury:hover {
+  background: linear-gradient(130deg, var(--gold-deep), var(--gold), var(--gold-bright));
+  color: var(--navy) !important;
+  box-shadow: 0 10px 26px rgba(184, 137, 29, 0.38), 0 0 0 1px rgba(245, 220, 138, 0.3);
+}
+
+.btn-luxury:hover::before {
+  left: 130%;
+}
+
+.floating-contact {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+}
+
+.floating-contact a {
+  box-shadow: 0 10px 24px rgba(15, 35, 67, 0.2);
+}
+
+.floating-contact a:last-child {
+  background: linear-gradient(135deg, var(--gold-deep), var(--gold), var(--gold-bright));
+  color: var(--navy);
+}
+
+.media-marquee {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.insta-carousel-wrap {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.insta-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: media-scroll 75s linear infinite;
+}
+
+.insta-track:hover {
+  animation-play-state: paused;
+}
+
+.insta-embed-shell {
+  border: 1px solid rgba(214, 168, 56, 0.32);
+  border-radius: 14px;
+  padding: 0.85rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(249, 243, 224, 0.88));
+  box-shadow: 0 12px 28px rgba(15, 35, 67, 0.12);
+  display: flex;
+  flex-direction: column;
+  min-height: 690px;
+}
+
+.insta-track .insta-embed-shell {
+  flex: 0 0 min(360px, 86vw);
+}
+
+.insta-embed-shell .instagram-media {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+}
+
+.instagram-frame {
+  width: 100%;
+  height: 700px;
+  border: 0;
+  border-radius: 10px;
+  background: #fff;
+  transform: translateY(-62px);
+}
+
+.instagram-frame-wrap {
+  height: 620px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes media-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .insta-track {
+    animation-duration: 48s;
+  }
+
+  .insta-embed-shell {
+    min-height: 610px;
+  }
+
+  .instagram-frame {
+    height: 620px;
+    transform: translateY(-56px);
+  }
+
+  .instagram-frame-wrap {
+    height: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .insta-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .insta-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

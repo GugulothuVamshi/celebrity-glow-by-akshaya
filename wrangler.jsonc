@@ -1,0 +1,9 @@
+{
+  "main": ".open-next/worker.js",
+  "name": "celebrity-glow-by-akshaya",
+  "compatibility_date": "2026-05-04",
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  }
+}
